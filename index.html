@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Page Astronomie</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="https://example.com/path/to/favicon.ico" type="image/x-icon">
+  
   <style>
     body {
       margin: 0;
@@ -16,6 +20,7 @@
       color: #fff;
       overflow: hidden;
       position: relative;
+      flex-direction: column; /* Ajouté pour une disposition verticale */
     }
 
     .container {
@@ -25,7 +30,7 @@
 
     h1 {
       font-size: 3rem;
-      margin-bottom: 20px;
+      margin-top: 20px;
       text-transform: uppercase;
       letter-spacing: 2px;
       color: #e6e6e6;
@@ -42,7 +47,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      background-color: #002233;
+      background-color: #00aaff;
       padding: 15px 30px;
       font-size: 1.2rem;
       border: none;
@@ -149,13 +154,24 @@
       }
     }
 
+    /* Style pour l'image en haut de la page */
+    .top-image {
+      width: 25%; /* Réduit la largeur de l'image à 60% */
+      height: auto;
+      max-width: 1000px; /* Limite la taille max de l'image */
+      margin-bottom: 20px; /* Espacement sous l'image */
+    }
+
   </style>
 </head>
 <body>
 
+  <!-- Image au-dessus du texte "Chill Moon LINKS" -->
+  <img src="https://media.discordapp.net/attachments/1296138475573346417/1312158269472768111/image-removebg-preview_4.png?ex=674b7a1e&is=674a289e&hm=66ef9915f84269d5ec46761d83eaabae6f33fc39a2395bcd835d20587607080c&=&format=webp&quality=lossless" alt="Astronomy Header" class="top-image">
+
   <div class="background-astronomy"></div>
   <div class="container">
-    <h1>Our LINKS</h1>
+    <h1>Chill Moon LINKS</h1>
     <div class="buttons">
       <button class="button" onclick="window.location.href='https://x.com'">
         <img src="https://cdn.discordapp.com/attachments/1296138475573346417/1312155472840884295/image-removebg-preview_3.png?ex=674b7783&is=674a2603&hm=5a404b33b1e0f9893eaece4a1fc4a5e406ebb39f920fae4fe9a5647ea2ac688b&" alt="Our X">
@@ -164,7 +180,7 @@
         <img src="https://media.discordapp.net/attachments/1296138475573346417/1312156093287370752/512px-Telegram_logo.png?ex=674b7817&is=674a2697&hm=8212dbf7dcc147f8a1823e0ab15b420e15b7ada4ba4d48f66607d18547779b94&=&format=webp&quality=lossless" alt="Our Telegram">
       </button>
       <button class="button" onclick="window.location.href='https://www.nasa.gov/'">
-        <img src="https://cdn.discordapp.com/attachments/1296138475573346417/1312141431011545270/image-removebg-preview_2.png?ex=674b6a6f&is=674a18ef&hm=67c135d2d83c23a2bfe3b7515995697099b4a52dcf70ebd680ee56ca922153e3&" alt="BUY MOREEE">
+        <img src="https://media.discordapp.net/attachments/1296138475573346417/1312158269472768111/image-removebg-preview_4.png?ex=674b7a1e&is=674a289e&hm=66ef9915f84269d5ec46761d83eaabae6f33fc39a2395bcd835d20587607080c&=&format=webp&quality=lossless" alt="BUY MOREEE">
       </button>
     </div>
   </div>
