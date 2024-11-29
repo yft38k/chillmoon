@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Astronomie</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1d1d1d, #4b4b4b);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .container {
+      text-align: center;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #e6e6e6;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #002233;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      text-transform: uppercase;
+      width: 150px;
+      text-align: center;
+    }
+
+    .button img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .button:hover img {
+      transform: scale(1.2);
+    }
+
+    .button:hover {
+      background-color: #0077cc;
+      transform: scale(1.1);
+    }
+
+    .button:focus {
+      outline: none;
+    }
+
+    /* Fond flouté */
+    .background-astronomy {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://p4.wallpaperbetter.com/wallpaper/572/752/922/space-earth-the-moon-beer-wallpaper-preview.jpg') no-repeat center center/cover;
+      filter: blur(7px);  /* Flou de 7px, correspondant à environ 70% de flou */
+      opacity: 0.3;  /* Opacité ajustée pour permettre à l'arrière-plan d'être flou tout en restant visible */
+      z-index: 1;
+    }
+
+    /* Style du bouton pour activer/désactiver l'effet neige */
+    .toggle-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #ff5733;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 10;
+      transition: background-color 0.3s ease;
+    }
+
+    .toggle-button:hover {
+      background-color: #ff2a00;
+    }
+
+    .toggle-button.active {
+      background-color: #28a745;  /* Vert pour réactiver la neige */
+    }
+
+    /* Style du flocon de neige */
+    .snowflake {
+      position: absolute;
+      top: -50px;
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      border-radius: 50%;
+      opacity: 0.8;
+      pointer-events: none;
+      animation: fall 5s linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        top: -50px;
+        opacity: 1;
+      }
+      100% {
+        top: 100vh;
+        opacity: 0;
+      }
+    }
+
+    /* Effet de flottement pour les flocons */
+    @keyframes float {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(30px);
+      }
+      100% {
+        transform: translateX(-30px);
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="background-astronomy"></div>
+  <div class="container">
+    <h1>Our LINKS</h1>
+    <div class="buttons">
+      <button class="button" onclick="window.location.href='https://x.com'">
+        <img src="https://cdn.discordapp.com/attachments/1296138475573346417/1312155472840884295/image-removebg-preview_3.png?ex=674b7783&is=674a2603&hm=5a404b33b1e0f9893eaece4a1fc4a5e406ebb39f920fae4fe9a5647ea2ac688b&" alt="Our X">
+      </button>
+      <button class="button" onclick="window.location.href='https://t.me'">
+        <img src="https://media.discordapp.net/attachments/1296138475573346417/1312156093287370752/512px-Telegram_logo.png?ex=674b7817&is=674a2697&hm=8212dbf7dcc147f8a1823e0ab15b420e15b7ada4ba4d48f66607d18547779b94&=&format=webp&quality=lossless" alt="Our Telegram">
+      </button>
+      <button class="button" onclick="window.location.href='https://www.nasa.gov/'">
+        <img src="https://cdn.discordapp.com/attachments/1296138475573346417/1312141431011545270/image-removebg-preview_2.png?ex=674b6a6f&is=674a18ef&hm=67c135d2d83c23a2bfe3b7515995697099b4a52dcf70ebd680ee56ca922153e3&" alt="BUY MOREEE">
+      </button>
+    </div>
+  </div>
+
+  <script>
+    let snowEffectEnabled = true;  // L'effet est activé au départ
+
+    function createSnowflake() {
+      if (!snowEffectEnabled) return;  // Si l'effet de neige est désactivé, ne pas créer de flocon
+
+      // Créer un flocon de neige
+      const snowflake = document.createElement('div');
+      snowflake.classList.add('snowflake');
+      document.body.appendChild(snowflake);
+
+      // Positionner le flocon de manière aléatoire à l'horizontale
+      const leftPosition = Math.random() * window.innerWidth;
+      snowflake.style.left = `${leftPosition}px`;
+
+      // Générer un délai aléatoire pour chaque flocon afin de varier l'animation
+      const delay = Math.random() * 2;  // Délai entre 0 et 2 secondes
+      snowflake.style.animationDelay = `${delay}s`;
+
+      // Supprimer le flocon lorsqu'il a quitté l'écran
+      setTimeout(() => {
+        snowflake.remove();
+      }, 5000);  // La durée de l'animation est de 5 secondes
+    }
+
+    // Créer des flocons de neige à un intervalle régulier
+    let snowInterval = setInterval(createSnowflake, 200); // Crée un flocon toutes les 200ms
+  </script>
+</body>
+</html>
