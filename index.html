@@ -2,216 +2,139 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page Astronomie</title>
-  
-  <!-- Favicon -->
-  <link rel="icon" href="https://media.discordapp.net/attachments/1296138475573346417/1312158269472768111/image-removebg-preview_4.png?ex=674b7a1e&is=674a289e&hm=66ef9915f84269d5ec46761d83eaabae6f33fc39a2395bcd835d20587607080c&=&format=webp&quality=lossless" type="image/x-icon">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AllChina Buy Spreadsheet Pro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(135deg, #1d1d1d, #4b4b4b);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      color: #fff;
-      overflow: hidden;
-      position: relative;
-      flex-direction: column; /* Ajouté pour une disposition verticale */
-    }
-
-    .container {
-      text-align: center;
-      z-index: 2;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-top: 20px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #e6e6e6;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 30px;
-    }
-
-    .button {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: #00aaff;
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-      text-transform: uppercase;
-      width: 150px;
-      text-align: center;
-    }
-
-    .button img {
-      width: 50px;
-      height: 50px;
-      object-fit: cover;
-      border-radius: 5px;
-      margin-bottom: 10px;
-    }
-
-    .button:hover img {
-      transform: scale(1.2);
-    }
-
-    .button:hover {
-      background-color: #0077cc;
-      transform: scale(1.1);
-    }
-
-    .button:focus {
+    input:focus, select:focus {
       outline: none;
+      box-shadow: 0 0 0 2px #3b82f6;
     }
-
-    /* Fond flouté */
-    .background-astronomy {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://p4.wallpaperbetter.com/wallpaper/572/752/922/space-earth-the-moon-beer-wallpaper-preview.jpg') no-repeat center center/cover;
-      filter: blur(7px);  /* Flou de 7px, correspondant à environ 70% de flou */
-      opacity: 0.5;  /* Opacité ajustée pour permettre à l'arrière-plan d'être flou tout en restant visible */
-      z-index: 1;
-    }
-
-    /* Style du bouton pour activer/désactiver l'effet neige */
-    .toggle-button {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background-color: #ff5733;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      z-index: 10;
-      transition: background-color 0.3s ease;
-    }
-
-    .toggle-button:hover {
-      background-color: #ff2a00;
-    }
-
-    .toggle-button.active {
-      background-color: #28a745;  /* Vert pour réactiver la neige */
-    }
-
-    /* Style du flocon de neige */
-    .snowflake {
-      position: absolute;
-      top: -50px;
-      width: 10px;
-      height: 10px;
-      background-color: #fff;
-      border-radius: 50%;
-      opacity: 0.8;
-      pointer-events: none;
-      animation: fall 5s linear infinite;
-    }
-
-    @keyframes fall {
-      0% {
-        top: -50px;
-        opacity: 1;
-      }
-      100% {
-        top: 100vh;
-        opacity: 0;
-      }
-    }
-
-    /* Effet de flottement pour les flocons */
-    @keyframes float {
-      0% {
-        transform: translateX(0);
-      }
-      50% {
-        transform: translateX(30px);
-      }
-      100% {
-        transform: translateX(-30px);
-      }
-    }
-
-    /* Style pour l'image en haut de la page */
-    .top-image {
-      width: 25%; /* Réduit la largeur de l'image à 60% */
-      height: auto;
-      max-width: 1000px; /* Limite la taille max de l'image */
-      margin-bottom: 20px; /* Espacement sous l'image */
-    }
-
   </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-900 p-6 font-sans">
 
-  <!-- Image au-dessus du texte "Chill Moon LINKS" -->
-  <img src="https://media.discordapp.net/attachments/1296138475573346417/1312158269472768111/image-removebg-preview_4.png?ex=674b7a1e&is=674a289e&hm=66ef9915f84269d5ec46761d83eaabae6f33fc39a2395bcd835d20587607080c&=&format=webp&quality=lossless" alt="Astronomy Header" class="top-image">
+  <div class="max-w-7xl mx-auto space-y-6">
+    <h1 class="text-4xl font-bold text-center text-blue-700">📊 AllChina Buy - Tableur Pro</h1>
 
-  <div class="background-astronomy"></div>
-  <div class="container">
-    <h1>Chill Moon LINKS</h1>
-    <div class="buttons">
-      <button class="button" onclick="window.location.href='https://x.com/_chillmoon/'">
-        <img src="https://cdn.discordapp.com/attachments/1296138475573346417/1312155472840884295/image-removebg-preview_3.png?ex=674b7783&is=674a2603&hm=5a404b33b1e0f9893eaece4a1fc4a5e406ebb39f920fae4fe9a5647ea2ac688b&" alt="Our X">
-      </button>
-      <button class="button" onclick="window.location.href='https://t.me/GoChillMoon'">
-        <img src="https://media.discordapp.net/attachments/1296138475573346417/1312156093287370752/512px-Telegram_logo.png?ex=674b7817&is=674a2697&hm=8212dbf7dcc147f8a1823e0ab15b420e15b7ada4ba4d48f66607d18547779b94&=&format=webp&quality=lossless" alt="Our Telegram">
-      </button>
-      <button class="button" onclick="window.location.href=''">
-        <img src="https://media.discordapp.net/attachments/1296138475573346417/1312158269472768111/image-removebg-preview_4.png?ex=674b7a1e&is=674a289e&hm=66ef9915f84269d5ec46761d83eaabae6f33fc39a2395bcd835d20587607080c&=&format=webp&quality=lossless" alt="BUY MOREEE">
-      </button>
+    <div class="flex justify-between items-center">
+      <input id="searchInput" type="text" placeholder="🔍 Rechercher..." class="border p-2 rounded w-1/3" onkeyup="filterTable()">
+      <div class="space-x-2">
+        <button onclick="addRow()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">➕ Ajouter</button>
+        <button onclick="exportCSV()" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">📤 Export CSV</button>
+        <button onclick="clearStorage()" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">🗑 Reset</button>
+      </div>
+    </div>
+
+    <div class="overflow-x-auto rounded shadow bg-white border border-gray-200">
+      <table id="spreadsheet" class="min-w-full text-sm text-left">
+        <thead class="bg-blue-100 text-gray-700 uppercase text-xs">
+          <tr>
+            <th class="cursor-pointer px-4 py-2" onclick="sortTable(0)">Produit</th>
+            <th class="cursor-pointer px-4 py-2" onclick="sortTable(1)">Fournisseur</th>
+            <th class="cursor-pointer px-4 py-2" onclick="sortTable(2)">Quantité</th>
+            <th class="cursor-pointer px-4 py-2" onclick="sortTable(3)">Prix</th>
+            <th class="cursor-pointer px-4 py-2" onclick="sortTable(4)">Statut</th>
+            <th class="px-4 py-2">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="spreadsheetBody" class="divide-y divide-gray-100"></tbody>
+      </table>
     </div>
   </div>
 
   <script>
-    let snowEffectEnabled = true;  // L'effet est activé au départ
+    let data = JSON.parse(localStorage.getItem('allchina_spreadsheet')) || [
+      { produit: 'LED RGB Strip', fournisseur: 'Shenzhen Light Co.', quantite: 100, prix: '¥250', statut: 'Payé' },
+    ];
 
-    function createSnowflake() {
-      if (!snowEffectEnabled) return;  // Si l'effet de neige est désactivé, ne pas créer de flocon
+    const statuses = ['Payé', 'En attente', 'En cours'];
 
-      // Créer un flocon de neige
-      const snowflake = document.createElement('div');
-      snowflake.classList.add('snowflake');
-      document.body.appendChild(snowflake);
-
-      // Positionner le flocon de manière aléatoire à l'horizontale
-      const leftPosition = Math.random() * window.innerWidth;
-      snowflake.style.left = `${leftPosition}px`;
-
-      // Générer un délai aléatoire pour chaque flocon afin de varier l'animation
-      const delay = Math.random() * 2;  // Délai entre 0 et 2 secondes
-      snowflake.style.animationDelay = `${delay}s`;
-
-      // Supprimer le flocon lorsqu'il a quitté l'écran
-      setTimeout(() => {
-        snowflake.remove();
-      }, 5000);  // La durée de l'animation est de 5 secondes
+    function saveData() {
+      localStorage.setItem('allchina_spreadsheet', JSON.stringify(data));
     }
 
-    // Créer des flocons de neige à un intervalle régulier
-    let snowInterval = setInterval(createSnowflake, 200); // Crée un flocon toutes les 200ms
+    function renderTable() {
+      const tbody = document.getElementById('spreadsheetBody');
+      tbody.innerHTML = '';
+      data.forEach((row, index) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td class="px-4 py-2"><input value="${row.produit}" onchange="editCell(${index}, 'produit', this.value)" class="w-full bg-transparent"></td>
+          <td class="px-4 py-2"><input value="${row.fournisseur}" onchange="editCell(${index}, 'fournisseur', this.value)" class="w-full bg-transparent"></td>
+          <td class="px-4 py-2"><input type="number" value="${row.quantite}" onchange="editCell(${index}, 'quantite', this.value)" class="w-full bg-transparent"></td>
+          <td class="px-4 py-2"><input value="${row.prix}" onchange="editCell(${index}, 'prix', this.value)" class="w-full bg-transparent"></td>
+          <td class="px-4 py-2">
+            <select onchange="editCell(${index}, 'statut', this.value)" class="w-full bg-transparent">
+              ${statuses.map(s => `<option ${s === row.statut ? 'selected' : ''}>${s}</option>`).join('')}
+            </select>
+          </td>
+          <td class="px-4 py-2 text-center">
+            <button onclick="deleteRow(${index})" class="text-red-500 hover:underline">🗑</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+      saveData();
+    }
+
+    function addRow() {
+      data.push({ produit: '', fournisseur: '', quantite: 0, prix: '', statut: 'En attente' });
+      renderTable();
+    }
+
+    function deleteRow(index) {
+      data.splice(index, 1);
+      renderTable();
+    }
+
+    function editCell(index, key, value) {
+      data[index][key] = value;
+      saveData();
+    }
+
+    function filterTable() {
+      const term = document.getElementById('searchInput').value.toLowerCase();
+      const tbody = document.getElementById('spreadsheetBody');
+      Array.from(tbody.rows).forEach(row => {
+        row.style.display = Array.from(row.cells).some(cell =>
+          cell.textContent.toLowerCase().includes(term)
+        ) ? '' : 'none';
+      });
+    }
+
+    function exportCSV() {
+      const headers = ['Produit', 'Fournisseur', 'Quantité', 'Prix', 'Statut'];
+      const rows = data.map(r => [r.produit, r.fournisseur, r.quantite, r.prix, r.statut]);
+      const csv = [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'allchina_spreadsheet.csv';
+      a.click();
+    }
+
+    function clearStorage() {
+      localStorage.removeItem('allchina_spreadsheet');
+      data = [];
+      renderTable();
+    }
+
+    let sortAsc = true;
+    function sortTable(colIndex) {
+      const keys = ['produit', 'fournisseur', 'quantite', 'prix', 'statut'];
+      const key = keys[colIndex];
+      data.sort((a, b) => {
+        const valA = a[key].toString().toLowerCase();
+        const valB = b[key].toString().toLowerCase();
+        return sortAsc ? valA.localeCompare(valB, undefined, { numeric: true }) : valB.localeCompare(valA, undefined, { numeric: true });
+      });
+      sortAsc = !sortAsc;
+      renderTable();
+    }
+
+    renderTable();
   </script>
 </body>
 </html>
